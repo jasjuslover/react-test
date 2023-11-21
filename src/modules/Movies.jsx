@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import { useMovies } from "../hooks/useMovies";
 import { useSearch } from "../hooks/useSearch";
 
-export const Movies = () => {
+const Movies = () => {
   const { movies } = useMovies();
   const {
     searchTerm,
@@ -11,6 +12,7 @@ export const Movies = () => {
 
   return (
     <section>
+      <Link to="/counter">Counter</Link>
       <div>
         <label htmlFor="search">Search</label>
         <input
@@ -36,3 +38,5 @@ export const Movies = () => {
     </section>
   );
 };
+
+export default Movies;

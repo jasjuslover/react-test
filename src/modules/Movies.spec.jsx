@@ -6,7 +6,8 @@ import {
   waitFor,
 } from "@testing-library/react";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
-import { Movies } from "./Movies";
+import Movies from "./Movies";
+import { MemoryRouter } from "react-router";
 
 describe("Movies", () => {
   const fetchSpy = vi.spyOn(global, "fetch");
@@ -31,7 +32,11 @@ describe("Movies", () => {
   });
 
   it("render Movies", async () => {
-    const { getByTestId } = render(<Movies />);
+    const { getByTestId } = render(
+      <MemoryRouter>
+        <Movies />
+      </MemoryRouter>
+    );
 
     await waitFor(
       () => {

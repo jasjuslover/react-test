@@ -25,3 +25,4 @@ dist-ssr
 
 # Coverage ui
 src/coverage
+coverage
